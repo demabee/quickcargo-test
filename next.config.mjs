@@ -12,5 +12,4 @@ export default withBundleAnalyzer({
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
-  styledComponents: true
 });

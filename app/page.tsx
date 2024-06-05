@@ -2,25 +2,7 @@
 
 import { useState } from 'react';
 import { TextInput, PasswordInput, Button, Notification } from '@mantine/core';
-import styled from 'styled-components';
 import { supabase } from '@/lib/supabaseClient';
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f9fa; /* Optional: Set a background color */
-`;
-
-const FormWrapper = styled.div`
-  max-width: 300px;
-  width: 100%;
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-  background-color: black;
-  border-radius: 8px; /* Optional: Add border radius */
-`;
 
 export default function HomePage() {
   const [username, setUsername] = useState<string>('');
@@ -41,8 +23,8 @@ export default function HomePage() {
   };
 
   return (
-    <Container>
-      <FormWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100dvh' }}>
+      <div style={{ maxWidth: 300, width: '100%', padding: '2rem' }}>
         <TextInput
           label="Username"
           placeholder="Enter your email"
@@ -66,7 +48,7 @@ export default function HomePage() {
             {message}
           </Notification>
         )}
-      </FormWrapper>
-    </Container>
+      </div>
+    </div>
   );
 }
